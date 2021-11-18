@@ -38,8 +38,8 @@
                 var sec = 0;
                 min = Math.floor(to_timeup/60);
                 sec = (to_timeup%60);
-                min = ("0"+min).slice(-2);
-                sec = ("0"+sec).slice(-2);
+                min = ("0"+min).slice(0);
+                sec = ("0"+sec).slice(0);
                 timer.innerHTML = min +":"+ sec;
             }
 
