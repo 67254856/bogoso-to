@@ -1,6 +1,8 @@
 .timerbody{
   text-align: center;
 }
-canvas{
-text-aligm: center;
+
+#timer{
+  font-size:125%;
 }
+
