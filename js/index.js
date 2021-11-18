@@ -1,4 +1,4 @@
-(function($) {
+/*(function($) {
   function generateBarGraph(wrapper) {
     // Set Up Values Array
     var values = [];
@@ -27,4 +27,7 @@
   $(window).on('load', function(event) {
     generateBarGraph('#dashboard-stats');
   });
-})(jQuery); // Fully reference jQuery after this point.
+})(jQuery); // Fully reference jQuery after this point.*/
+$(function() {
+  alert('OK!');
+});
