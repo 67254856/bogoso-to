@@ -61,41 +61,11 @@
                 $("#stopbutton").click(count_stop);
                 $("#resetbutton").click(count_reset);
             })
-        
-        
-        
-        (function($) {
-  function generateBarGraph(wrapper) {
-    // Set Up Values Array
-    var values = [];
-
-    // Get Values and save to Array
-    $(wrapper + ' .bar').each(function(index, el) {
-      values.push($(this).data('value'));
-    });
-
-    // Get Max Value From Array
-    var max_value = Math.max.apply(Math, values);
-
-    // Set width of bar to percent of max value
-    $(wrapper + ' .bar').each(function(index, el) {
-      var bar = $(this),
-          value = bar.data('value'),
-          percent = Math.ceil((value / max_value) * 100);
-
-      // Set Width & Add Class
-      bar.width(percent + '%');
-      bar.addClass('in');
-    });
-  }
-
-  // Generate the bar graph on window load...
-  $(window).on('load', function(event) {
-    generateBarGraph('#dashboard-stats');
-  });
-})(jQuery); // Fully reference jQuery after this point.
-
+   
         </script>
+    
+     <script type=”text/javascript” src=”js/jquery-3.6.0.min.js”></script>
+    
     </head>
         <title>
             R3 NITAC　2E 高専祭 
@@ -110,7 +80,6 @@
                 <button id ="resetbutton">reset</button>
             </div>
         </div>  
-    
     <div class="chart-wrap">
         <div class="chart-title">
           TITLE
@@ -119,9 +88,9 @@
           <div class="row">
             <span class="label">Interest 1</span>
             <div class="bar-wrap">
-              <div class="bar" data-value="101"></div>
+              <div class="bar" data-value="100"></div>
             </div>
-            <span class="number">101</span>
+            <span class="number">100</span>
           </div>
           <div class="row">
             <span class="label">Interest 2</span>
