@@ -4,8 +4,7 @@
     <meta charset="uft-8"/>
         <link rel="stylesheet" type="text/css" href="index.css">
         <script src="js/jquery-3.6.0.min.js"></script>
-    <script>
-      <script>
+        <script>
             var to_timeup = 180;
             var max = 180;
             var intervalid;
@@ -38,8 +37,8 @@
                 var sec = 0;
                 min = Math.floor(to_timeup/60);
                 sec = (to_timeup%60);
-                min = ("0"+min).slice(0);
-                sec = ("0"+sec).slice(0);
+                min = ("0"+min).slice(-2);
+                sec = ("0"+sec).slice(-2);
                 timer.innerHTML = min +":"+ sec;
             }
 
@@ -69,27 +68,6 @@
                 var resetbutton=document.getElementById("resetbutton");
                 resetbutton.addEventListener("click",count_reset,false);
             }           
-        </script>
-            }
-
-            function padding() {
-                var min = 0;
-                var sec = 0;
-                var timer = document.getElementById("timer");
-                min = Math.floor(to_timeup/60);
-                sec = (to_timeup%60);
-                min = ('0'+min).slice(-2);
-                sec = ('0'+sec).slice(-2);
-                timer.innerHTML = min+':'+sec;
-            }
-
-            $(function () {
-                padding();
-                $("#startbutton").click(count_start);
-                $("#stopbutton").click(count_stop);
-                $("#resetbutton").click(count_reset);
-            })
-   
         </script>
 
     </head>
