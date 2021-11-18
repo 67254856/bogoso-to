@@ -5,43 +5,71 @@
         <link rel="stylesheet" type="text/css" href="index.css">
         <script src="js/jquery-3.6.0.min.js"></script>
     <script>
-        var start_flag = false;
-        var intervalid;
-        var to_timeup = 180;
-        var backstart = 180;
+      <script>
+            var to_timeup = 180;
+            var max = 180;
+            var intervalid;
+            var start_flag = false;
 
-            function count_start() {
-                if (start_flag===false) {
-                    intervalid = setInterval(count_down, 720);
-                    start_flag = true;
-                }
+            function count_start(){
+                console.log("count_start");
+               if(start_flag===false){                          
+                intervalid = setInterval(count_down,1000);  
+                start_flag = true;
+               }
             }
 
-            function count_down() {
-                var timer = document.getElementById("timer");
-                if (to_timeup===0) {
-                    $('#timer').html('Time up!');  
-                    $('#timer').addClass('red');
-                   count_stop();
-                } else {
+            function count_down(){
+                console.log("count_down");
+                   var timer = document.getElementById("timer");  
+                if(to_timeup===0){
+                    timer.innerHTML = 'Time up!'
+                    timer.style.color="red";      　　　　　　　　  
+                    count_stop();
+                }   else {
                     to_timeup--;
                     padding();
                 }
             }
 
-            function count_stop() {
+            function padding(){
+                var timer=document.getElementById("timer");   
+                var min = 0;
+                var sec = 0;
+                min = Math.floor(to_timeup/60);
+                sec = (to_timeup%60);
+                min = ("0"+min).slice(-2);
+                sec = ("0"+sec).slice(-2);
+                timer.innerHTML = min +":"+ sec;
+            }
+
+            function count_stop(){
+                console.log(count_stop);
                 clearInterval(intervalid);
                 start_flag = false;
             }
 
-            function count_reset() {
+            function count_reset(){
+                console.log(count_reset);
                 var timer = document.getElementById("timer");
-                to_timeup = backstart;
-                padding();
-                // timer.style.color="black"; 
-                $('#timer').css('color','black');
                 clearInterval(intervalid);
                 start_flag = false;
+                to_timeup = max; 
+                padding();
+                timer.style.color = "black";   
+            }
+
+            window.onload = function(){
+                //console.log("mumei");
+                padding();
+                var startbutton=document.getElementById("startbutton");
+                startbutton.addEventListener("click",count_start,false);
+                var stopbutton=document.getElementById("stopbutton");
+                stopbutton.addEventListener("click",count_stop,false);
+                var resetbutton=document.getElementById("resetbutton");
+                resetbutton.addEventListener("click",count_reset,false);
+            }           
+        </script>
             }
 
             function padding() {
