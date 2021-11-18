@@ -49,7 +49,7 @@
                 var sec = 0;
                 var timer = document.getElementById("timer");
                 min = Math.floor(to_timeup/60);
-                sec = (to_timeup%200);
+                sec = (to_timeup%60);
                 min = ('0'+min).slice(-2);
                 sec = ('0'+sec).slice(-2);
                 timer.innerHTML = min+':'+sec;
