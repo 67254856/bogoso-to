@@ -98,15 +98,16 @@
 var ctx = document.getElementById('ex_chart');
 
 var data = {
-    labels: ["平成26年", "平成27年", "平成28年", "平成29年", "平成30年"],
+    labels: ["1", "2", "3", "4", "5"],
     datasets: [{
         label: '得点',
-        data: [880, 740, 900, 520, 930],
+        data: [8, 7, 9, 5, 9],
         backgroundColor: 'rgba(255, 100, 100, 1)'
     }]
 };
 
 var options = {
+    indexAxis: 'y',
     scales: {
         yAxes: [{
             ticks: {
@@ -123,61 +124,6 @@ var ex_chart = new Chart(ctx, {
 });
 </script>
     
-    <div class="chart-wrap">
-        <div class="chart-title">
-          TITLE
-        </div>
-        <div id="dashboard-stats" class="chart bars-horizontal brand-primary">
-          <div class="row">
-            <span class="label">Interest 1</span>
-            <div class="bar-wrap">
-              <div class="bar" data-value="101"></div>
-            </div>
-            <span class="number">101</span>
-          </div>
-          <div class="row">
-            <span class="label">Interest 2</span>
-            <div class="bar-wrap">
-              <div class="bar" data-value="62"></div>
-            </div>
-            <span class="number">62</span>
-          </div>
-          <div class="row">
-            <span class="label">Interest 3</span>
-            <div class="bar-wrap">
-              <div class="bar" data-value="35"></div>
-            </div>
-            <span class="number">35</span>
-          </div>
-          <div class="row">
-            <span class="label">Interest 4</span>
-            <div class="bar-wrap">
-              <div class="bar" data-value="13"></div>
-            </div>
-            <span class="number">13</span>
-          </div>
-          <div class="row">
-            <span class="label">Interest 5</span>
-            <div class="bar-wrap">
-              <div class="bar" data-value="8"></div>
-            </div>
-            <span class="number">8</span>
-          </div>
-          <div class="row">
-            <span class="label">Interest 6</span>
-            <div class="bar-wrap">
-              <div class="bar" data-value="5"></div>
-            </div>
-            <span class="number">5</span>
-          </div>
-          <div class="row">
-            <span class="label">Interest 7</span>
-            <div class="bar-wrap">
-              <div class="bar" data-value="2"></div>
-            </div>
-            <span class="number">2</span>
-          </div>
-        </div>
-      </div>
+    
 </body>
 </html>
